@@ -30,6 +30,7 @@ Gameplay is turn-based, i.e., "enemies move when you move".
 You can either move one tile or attack once per turn.
 - The game uses a queue to track whether all organisms (player character and enemies) have made their moves. While intuitively sound, this is a mistake as ds_queues in GameMaker only allows access to the head of the queue. As a result, organisms cannot remove themselves from the queue when they die, and each time an organism is at the head of the queue it must be checked whether it is still alive. A ds_list would have been better.
 - The bolt attack launches a projectile in the direction the player character is facing (Additionally, there is also dynamic sprite switching depending on the direction the player character is facing) and deals damage if it collides with an enemy. Damage numbers are also generated whenever an organism takes damage.
+- You can also hold SHIFT + arrow keys to change the direction your player character is facing. Tiles that you are currently facing will be highlighted during this mode. It could be useful if you are trying to attack an enemy that you are currently not facing.
 - There is a dynamic minimap that is progressively revealed as you explore the level.
 
 ## Enemy AI
